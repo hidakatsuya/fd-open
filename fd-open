@@ -12,7 +12,7 @@ fi
 
 FD_OPTIONS=${FDO_FD_OPTIONS:--t d}
 
-RESULT=$(fd ${FD_OPTIONS} --base-directory . "$KEYWORD" | fzf --select-1 --exit-0)
+RESULT=$(fd ${FD_OPTIONS} "$KEYWORD" | fzf --select-1 --exit-0)
 
 if [[ -z "$RESULT" ]]; then
   echo "No result found for pattern: '$KEYWORD'"
