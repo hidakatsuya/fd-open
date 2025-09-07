@@ -37,6 +37,8 @@ Open a file whose name contains `main.c` with `vim`.
 FDO_FD_OPTIONS='-t f' fd-open vim main.c
 ```
 
+[![asciicast](https://asciinema.org/a/WSAQPCCDQPWqaTdcaojtiblf7.svg)](https://asciinema.org/a/WSAQPCCDQPWqaTdcaojtiblf7)
+
 ### `FDO_FD_OPTIONS` Environment Variable
 
 You can specify options to pass to the `fd` command using the `FDO_FD_OPTIONS` environment variable.
