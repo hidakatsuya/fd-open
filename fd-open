@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+CMD="$1"
+KEYWORD="$2"
+
+if [[ -z "$CMD" || -z "$KEYWORD" ]]; then
+  echo "Usage: $(basename "$0") <command> <keyword>"
+  echo "Example: $(basename "$0") zed my-project"
+  exit 1
+fi
+
+FD_OPTIONS=${FDO_FD_OPTIONS:--t d}
+
+RESULT=$(fd ${FD_OPTIONS} --base-directory . "$KEYWORD" | fzf --select-1 --exit-0)
+
+if [[ -z "$RESULT" ]]; then
+  echo "No result found for keyword: '$KEYWORD'"
+  exit 1
+else
+  echo "Executing: $CMD '$RESULT'"
+  "$CMD" "$RESULT"
+fi
