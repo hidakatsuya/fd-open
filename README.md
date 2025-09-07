@@ -23,18 +23,19 @@ This script depends on the following tools. Please install them beforehand.
 
 ## Usage
 
-The basic syntax is `fd-open <program> <keyword>`.
+The basic syntax is `fd-open <program> <pattern>`.
 
 **Examples:**
 
-*   Open a directory containing the keyword `my-project` with `zed`:
-    ```sh
-    fd-open zed my-project
-    ```
-*   Open a file containing the keyword `main.c` with `vim`:
-    ```sh
-    FDO_FD_OPTIONS='-t f' fd-open vim main.c
-    ```
+Open a directory whose name contains `my-project` with `zed`.
+```sh
+fd-open zed my-project
+```
+
+Open a file whose name contains `main.c` with `vim`.
+```sh
+FDO_FD_OPTIONS='-t f' fd-open vim main.c
+```
 
 ### `FDO_FD_OPTIONS` Environment Variable
 
